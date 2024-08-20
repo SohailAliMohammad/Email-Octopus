@@ -11,3 +11,10 @@ Security systems need database storage just like many other applications. Howeve
 - The system will be protected against vulnerabilities such as SQL injection attacks.
 - Mailgun server authenticates the server using previously made credentials.
 
+### Software Quality Attributes 
+The software consists of the following elements:  
+1. The SMTP server  
+2. The Client application  
+3. The Credential database  
+4. The database should always remain consistent in case of an error.  
+
