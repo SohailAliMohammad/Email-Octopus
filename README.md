@@ -34,9 +34,9 @@ The software consists of the following elements:
 </maildrop>
 
 
-Mail Filters
-Global Filters
-Global filters affect all maildrops. The configuration is the same for both global and local filters.
+### Mail Filters
+## Global Filters
+## Global filters affect all maildrops. The configuration is the same for both global and local filters.
 
 <filters>
     <!-- size filter -->
@@ -54,8 +54,8 @@ Global filters affect all maildrops. The configuration is the same for both glob
     <filter class="MailFetch.filters.SubjectMailFilter" delete="true" blocklist="/home/abcd/MailFetch/spool/subject.blocklist" mda="junk"></filter>
 </filters>
 
-Local Filters
-Local filters affect only the specific maildrop they are associated with.
+### Local Filters
+## Local filters affect only the specific maildrop they are associated with.
 
 <maildrop protocol="pop3" mda="smtp">
     <!-- .... standard maildrop config goes here .... -->
@@ -66,15 +66,15 @@ Local filters affect only the specific maildrop they are associated with.
     </filters>
 </maildrop>
 
-Delivery Agents
-Mailbox Delivery Agent
+### Delivery Agents
+## Mailbox Delivery Agent
 
 <mda class="MailFetch.delivery.MailboxDeliveryAgent" id="junk">
     <destination>/home/abcd/Mail/junkmail</destination>
 </mda>
 
 
-SMTP Delivery Agent
+### SMTP Delivery Agent
 
 <mda class="MailFetch.delivery.SMTPDeliveryAgent" id="smtp">
     <host>localhost.localdomain</host>
@@ -84,6 +84,6 @@ SMTP Delivery Agent
 </mda>
 
 
-Null Delivery Agent
+### Null Delivery Agent
 
 <mda class="MailFetch.delivery.NullDeliveryAgent" id="null"></mda>
