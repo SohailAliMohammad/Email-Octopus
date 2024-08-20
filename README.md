@@ -32,3 +32,24 @@ The software consists of the following elements:
     <filters> 
     </filters> 
 </maildrop>
+
+Mail Filters
+Global Filters
+Global filters affect all maildrops. The configuration is the same for both global and local filters.
+
+<filters>
+    <!-- size filter -->
+    <filter class="MailFetch.filters.SizeMailFilter" maxsize="1548576" delete="false"></filter>
+    
+    <!-- sender mail filter -->
+    <filter class="MailFetch.filters.SenderMailFilter" delete="true" blocklist="/home/abcd/MailFetch/spool/blocklist" mda="junk"></filter>
+    
+    <!-- msgid filter -->
+    <filter class="MailFetch.filters.MessageIDMailFilter" delete="true">
+        <storage name="msgid.cache" limit="8192" destination="spool/msgid.cache"/>
+    </filter>
+    
+    <!-- subject mail filter -->
+    <filter class="MailFetch.filters.SubjectMailFilter" delete="true" blocklist="/home/abcd/MailFetch/spool/subject.blocklist" mda="junk"></filter>
+</filters>
+
