@@ -33,6 +33,7 @@ The software consists of the following elements:
     </filters> 
 </maildrop>
 
+
 Mail Filters
 Global Filters
 Global filters affect all maildrops. The configuration is the same for both global and local filters.
@@ -52,4 +53,42 @@ Global filters affect all maildrops. The configuration is the same for both glob
     <!-- subject mail filter -->
     <filter class="MailFetch.filters.SubjectMailFilter" delete="true" blocklist="/home/abcd/MailFetch/spool/subject.blocklist" mda="junk"></filter>
 </filters>
+
+Local Filters
+Local filters affect only the specific maildrop they are associated with.
+
+<maildrop protocol="pop3" mda="smtp">
+    <!-- .... standard maildrop config goes here .... -->
+    <!-- filters specific to this maildrop -->
+    <filters>
+        <!-- sender mail filter -->
+        <filter class="MailFetch.filters.SenderMailFilter" delete="true" blocklist="/home/abcd/MailFetch/spool/linuxlist" mda="linux"></filter>
+    </filters>
+</maildrop>
+
+Delivery Agents
+Mailbox Delivery Agent
+
+<mda class="MailFetch.delivery.MailboxDeliveryAgent" id="junk">
+    <destination>/home/abcd/Mail/junkmail</destination>
+</mda>
+
+
+SMTP Delivery Agent
+
+<mda class="MailFetch.delivery.SMTPDeliveryAgent" id="smtp">
+    <host>localhost.localdomain</host>
+    <port>25</port>
+    <localuser>abcd</localuser>
+    <domain>localhost</domain>
+</mda>
+
+
+Null Delivery Agent
+
+<mda class="MailFetch.delivery.NullDeliveryAgent" id="null"></mda>
+
+
+
+
 
