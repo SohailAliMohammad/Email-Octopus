@@ -21,7 +21,7 @@ The software consists of the following elements:
 ### CODE: 
 ## Maildrop Configuration
 
-
+```xml
 <maildrop protocol="pop3" mda="smtp"> 
     <host>mail.somepopserver.com</host> 
     <port>110</port> 
