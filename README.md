@@ -87,8 +87,3 @@ SMTP Delivery Agent
 Null Delivery Agent
 
 <mda class="MailFetch.delivery.NullDeliveryAgent" id="null"></mda>
-
-
-
-
-
